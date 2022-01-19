@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+  doom.game:
+    restart: always
+    image: 'elliottking/doom-wasm:0.1.1'
+    ports:
+      - '8000:8000'
+  doom.nginx:
+    build:
+      context: .
+      dockerfile: ./docker/nginx.Dockerfile
+    restart: always
+    env_file: .env
+    depends_on:
+      - doom.game
+    expose:
+      - "${EXPOSE_PORT}"
+    environment:
+      VIRTUAL_HOST: "${VIRTUAL_HOST}"
+    networks:
+      - reverse-proxy
+      - default
+    volumes:
+      - ./src:/app/:ro
+      - "/etc/timezone:/etc/timezone:ro"
+      - "/etc/localtime:/etc/localtime:ro"
+networks:
+  reverse-proxy:
+    external: true
