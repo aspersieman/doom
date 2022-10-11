@@ -54,8 +54,26 @@ img {
 
 .doom-game {
   position: absolute;
-  width: 100%;
   top: 124px;
+  width: 830px;
+  height: 630px;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.doom-game embed {
+  display: inline-block;
+  width: 830px;
+  height: 630px;
+}
+
+.doom-game embed::before {
+  content: "";
+  display: block;
+  padding-top: 70%;
+  background: black;
+  border-top-left-radius: 30px 100%;
+  border-top-right-radius: 30px 100%;
+  border-bottom-right-radius: 100% 30px;
+  border-bottom-left-radius: 100% 30px;
 }
