@@ -7,10 +7,30 @@
     <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
+    <nav role="navigation">
+      <div id="menu-toggle">
+        <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+        <ul id="menu">
+          <a href="https://nicolvandermerwe.com"><li>About me</li></a>
+          <a href="https://www.linkedin.com/in/nicolaasjvandermerwe/"><li>LinkedIn</li></a>
+          <a href="https://github.com/aspersieman"><li>Github</li></a>
+        </ul>
+      </div>
+    </nav>
     <img class="doom-monitor" src="monitor.png" alt="Doom monitor"/>
     <div class="doom-game">
+      <!--
       <embed 
         src="https://doom.nicolaas.me:8001"
+        width="830"
+        height="630"
+      />
+      -->
+      <embed 
+        src="http://localhost:8001"
         width="830"
         height="630"
       />
