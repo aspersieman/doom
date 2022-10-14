@@ -50,6 +50,7 @@ img {
   margin-left: auto;
   margin-right: auto;
   width: 80%;
+  max-width: 1012px;
   height: 100vh;
 }
 
